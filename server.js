@@ -17,15 +17,11 @@ function start(route, handle) {
 		var pathname = url.parse(request.url).pathname;
 		console.log("Request for " + pathname + " received.");
 		
-		//Passes the pathname through route, defined in router.js
-		route(handle, pathname);
-		
-		//writeHead(status_code[, status_message][, header])
-        response.writeHead(200, "OK", {"Content-Type": "text/plain"});
-        //Sends the plain text to the content
-        response.write("Hello World");
-        //Ends the response
-        response.end();
+		//Route, defined in router.js
+		//@param {Array} handle
+		//@param {String} pathname
+		//@param {Object} response
+		route(handle, pathname, response);
     }
     
     /**
